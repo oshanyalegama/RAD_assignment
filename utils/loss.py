@@ -113,7 +113,7 @@ class ComputeLoss:
         """Initializes ComputeLoss with model and autobalance option, autobalances losses if True."""
         device = next(model.parameters()).device  # get model device
         nl = de_parallel(model).model[-1].nl 
-        h = {
+        hyp = {
             "box": 0.09,  # box loss gain
             "cls": 2.1,  # cls loss gain
             "cls_pw": 1.25,  # cls BCELoss positive_weight
@@ -130,6 +130,7 @@ class ComputeLoss:
         imgsz = 224
         hyp["obj"] *= (imgsz / 640) ** 2 * 3 / nl  # scale to image size and layers
         hyp["label_smoothing"] = 0
+        h=hyp
         # Define criteria
         BCEcls = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([h["cls_pw"]], device=device))
         BCEobj = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([h["obj_pw"]], device=device))
