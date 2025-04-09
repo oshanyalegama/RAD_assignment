@@ -124,7 +124,7 @@ class ComputeLoss:
             "anchors": 8.0,  # anchors per output grid (0 to ignore)
             "fl_gamma": 0,  # focal loss gamma (efficientDet default gamma=1.5)
         }
-
+        nc=2
         hyp["box"] *= 3 / nl  # scale to layers
         hyp["cls"] *= nc / 80 * 3 / nl  # scale to classes and layers
         imgsz = 224
