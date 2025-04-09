@@ -112,7 +112,6 @@ class ComputeLoss:
     def __init__(self, model, autobalance=False):
         """Initializes ComputeLoss with model and autobalance option, autobalances losses if True."""
         device = next(model.parameters()).device  # get model device
-        # h = model.hyp  # hyperparameters
         nl = de_parallel(model).model[-1].nl 
         h = {
             "box": 0.09,  # box loss gain
