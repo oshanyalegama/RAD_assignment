@@ -61,3 +61,53 @@ The requirements.txt file contains all the dependencies required to run the proj
 
 After installing the dependencies, simply open and run the train.ipynb Jupyter notebook. It contains all the necessary code to load the custom dataset, load the new and default loss functions, and train the model and validate the model, with the option to test for a given sample case.
 
+## Dataset Structure
+
+The dataset should be in the following structure
+
+project/
+│
+├── images/
+│   └── *.png, *.jpg, etc.
+│
+├── annotations/
+│   └── *.xml
+
+
+### Folder Descriptions
+
+- **`images/`**  
+  This folder should contain all the image files. Each image must have a corresponding annotation file in the `annotations/` folder.
+
+- **`annotations/`**  
+  This folder must contain XML annotation files (in PASCAL VOC format) for each image.  
+  The filenames of the annotation files must exactly match their corresponding images (e.g., `Cats_Test1.xml` for `Cats_Test1.png`).
+
+### Annotation Format
+
+Each XML file should follow this structure:
+
+```xml
+<annotation>
+    <folder>images</folder>
+    <filename>Cats_Test1.png</filename>
+    <size>
+        <width>500</width>
+        <height>500</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>dog</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>128</xmin>
+            <ymin>22</ymin>
+            <xmax>240</xmax>
+            <ymax>222</ymax>
+        </bndbox>
+    </object>
+</annotation>
