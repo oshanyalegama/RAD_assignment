@@ -4,6 +4,8 @@ This project modifies the YOLOv5s loss function by adding two additional terms: 
 
 The original Yolov5 repository has been copied here for retrieval of functions for evaluation and preprocessing, as will be found in the notebook.
 
+Link to Dataset: https://www.kaggle.com/datasets/andrewmvd/dog-and-cat-detection
+
 ## New Loss Function
 
 The new loss function combines the original YOLOv5s loss with the added aspect ratio and center alignment loss terms. Here’s a breakdown of the original and modified loss functions:
