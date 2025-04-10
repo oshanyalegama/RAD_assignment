@@ -2,6 +2,8 @@
 
 This project modifies the YOLOv5s loss function by adding two additional terms: **Aspect Ratio Loss** and **Center Alignment Loss**. These modifications are integrated into the existing loss function to improve the bounding box predictions for a custom dataset consisting of **cats and dogs**.
 
+The original Yolov5 repository has been copied here for retrieval of functions for evaluation and preprocessing, as will be found in the notebook.
+
 ## New Loss Function
 
 The new loss function combines the original YOLOv5s loss with the added aspect ratio and center alignment loss terms. Here’s a breakdown of the original and modified loss functions:
