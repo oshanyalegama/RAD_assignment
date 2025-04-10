@@ -48,11 +48,11 @@ The dataset consists of images labeled with bounding boxes around the cats and d
 
 ## How to Run
 
-Before running the code, make sure to change the home directory to the one where your notebook is located. This happens in the notebook but you should change kaggle to whatever path is your current directory. This applies to the dataset directory paths as well. You can do this by running the following command in a code cell at the beginning of your notebook:
+Before running the code, make sure to change the home directory to the one where your notebook is located. This happens in the notebook but you should change kaggle to whatever path is your current directory. This applies to the dataset directory paths as well. For example:
 
 ```python
 import os
-os.chdir('/kaggle/working/your-notebook-directory')
+os.chdir('/directory_your_notebook_is_in')
 ```
 To run this project, follow these steps:
 
