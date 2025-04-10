@@ -290,6 +290,8 @@ class ComputeNewLoss:
             "anchor_t": 4.0,  # anchor-multiple threshold
             "anchors": 8.0,  # anchors per output grid (0 to ignore)
             "fl_gamma": 0,  # focal loss gamma (efficientDet default gamma=1.5)
+            "cent": 1,
+            "aspect": 1
         }
         nc=2
         hyp["box"] *= 3 / nl  # scale to layers
