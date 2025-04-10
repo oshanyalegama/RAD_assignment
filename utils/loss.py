@@ -356,7 +356,8 @@ class ComputeNewLoss:
                 # Aspect ratio loss (new term)
                 pwh_aspect_ratio = pwh[:, 0] / pwh[:, 1]  # Width/Height ratio for predicted boxes
                 twh_aspect_ratio = tbox[i][:, 2] / tbox[i][:, 3]  # Width/Height ratio for target boxes
-                aspect_loss = torch.mean((pwh_aspect_ratio - twh_aspect_ratio) ** 2)  # L2 distance between aspect ratios
+                #aspect_loss = torch.mean((pwh_aspect_ratio - twh_aspect_ratio) ** 2)  # L2 distance between aspect ratios
+                aspect_loss = torch.mean(torch.abs(pwh_aspect_ratio - twh_aspect_ratio))  # L1 distance between aspect ratios
                 laspect += aspect_loss
     
                 # Objectness
