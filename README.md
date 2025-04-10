@@ -59,7 +59,7 @@ The requirements.txt file contains all the dependencies required to run the proj
 
 ## Train and Validation
 
-After installing the dependencies, simply open and run the train.ipynb Jupyter notebook. It contains all the necessary code to load the custom dataset, load the new and default loss functions, and train the model and validate the model, with the option to test for a given sample case.
+After installing the dependencies, simply open and run the Assignment.ipynb Jupyter notebook. It contains all the necessary code to load the custom dataset, load the new and default loss functions, and train the model and validate the model, with the option to test for a given sample case.
 
 ## Dataset Structure
 
