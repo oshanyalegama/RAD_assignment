@@ -24,19 +24,18 @@ The modified loss function includes the same components as the original loss fun
 
 1. **Aspect Ratio Loss**: Measures the difference in aspect ratio between the predicted and ground truth bounding boxes to encourage more accurate box dimensions.
    
-   $\mathcal{L}_{\text{aspect}} = \left| \frac{w_{\text{pred}}}{h_{\text{pred}}} - \frac{w_{\text{gt}}}{h_{\text{gt}}} \right|$
+   ![aspect loss](https://latex.codecogs.com/png.image?\bg_white&space;\dpi{150}&space;\mathcal{L}_{\text{aspect}}%20=%20\left|%20\frac{w_{\text{pred}}}{h_{\text{pred}}}%20-%20\frac{w_{\text{gt}}}{h_{\text{gt}}}%20\right|)
+
    
 2. **Center Alignment Loss**: Calculates the L2 distance between the predicted and ground truth bounding box centers to improve the precision of the object localization.
    
-   $$
-   \mathcal{L}_{\text{center}} = \| \mathbf{c}_{\text{pred}} - \mathbf{c}_{\text{gt}} \|_2^2
-   $$
+   ![center loss](https://latex.codecogs.com/png.image?\bg_white&space;\dpi{150}&space;\mathcal{L}_{\text{center}}&space;=&space;\|&space;\mathbf{c}_{\text{pred}}&space;-&space;\mathbf{c}_{\text{gt}}&space;\|_2^2)
+
 
 The final loss function is a weighted sum of the original YOLOv5s loss terms and the added aspect ratio and center alignment loss terms:
 
-$$
-\mathcal{L} = \lambda_{\text{IoU}} \mathcal{L}_{\text{IoU}} + \lambda_{\text{center}} \mathcal{L}_{\text{center}} + \lambda_{\text{aspect}} \mathcal{L}_{\text{aspect}} + \lambda_{\text{obj}} \mathcal{L}_{\text{obj}} + \lambda_{\text{BCE}} \mathcal{L}_{\text{BCE}}
-$$
+![total loss](https://latex.codecogs.com/png.image?\bg_white&space;\dpi{150}&space;\mathcal{L}&space;=&space;\lambda_{\text{IoU}}&space;\mathcal{L}_{\text{IoU}}&space;+&space;\lambda_{\text{center}}&space;\mathcal{L}_{\text{center}}&space;+&space;\lambda_{\text{aspect}}&space;\mathcal{L}_{\text{aspect}}&space;+&space;\lambda_{\text{obj}}&space;\mathcal{L}_{\text{obj}}&space;+&space;\lambda_{\text{BCE}}&space;\mathcal{L}_{\text{BCE}})
+
 
 Where:
 
